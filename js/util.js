@@ -36,6 +36,7 @@ function throttle (callback, delayBetweenFrames) {
 
 const showAlert = (message) => {
   const alertContainer = document.createElement('div');
+  alertContainer.classList.add('data-error');
   alertContainer.style.zIndex = '100';
   alertContainer.style.position = 'absolute';
   alertContainer.style.left = '0';

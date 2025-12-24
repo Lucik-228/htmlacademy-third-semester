@@ -42,7 +42,7 @@ const renderComments = () => {
 
   commentsList.innerHTML = '';
   commentsList.append(fragment);
-  commentCount.innerHTML = `${commentsShown} из <span class="comments-count">${comments.length}</span> комментариев`;
+  commentCount.innerHTML = `<span class="social__comment-shown-count">${commentsShown}</span> из <span class="social__comment-total-count">${comments.length}</span> комментариев`;
 };
 
 const hideBigPicture = () => {
@@ -82,7 +82,7 @@ const showBigPicture = (data) => {
     renderComments();
   } else {
     commentsList.innerHTML = '';
-    commentCount.innerHTML = '0 из <span class="comments-count">0</span> комментариев';
+    commentCount.innerHTML = '<span class="social__comment-shown-count">0</span> из <span class="social__comment-total-count">0</span> комментариев';
     commentsLoader.classList.add('hidden');
   }
 

@@ -2,6 +2,7 @@ import { resetScale } from './scale.js';
 import { resetEffects } from './effect.js';
 import { sendData } from './api.js';
 import { showSuccessMessage, showErrorMessage } from './message.js';
+import { loadUserImage, resetUserImage } from './avatar.js';
 
 const MAX_HASHTAG_COUNT = 5;
 const VALID_SYMBOLS = /^#[a-zа-яё0-9]{1,19}$/i;
@@ -31,6 +32,7 @@ const hideModal = () => {
   form.reset();
   resetScale();
   resetEffects();
+  resetUserImage();
   pristine.reset();
   overlay.classList.add('hidden');
   body.classList.remove('modal-open');
@@ -53,6 +55,7 @@ const onCancelButtonClick = () => {
 };
 
 const onFileInputChange = () => {
+  loadUserImage();
   showModal();
 };
 
